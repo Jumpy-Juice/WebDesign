@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page2</title>
+  <link rel="stylesheet" href="./css/page2.css">
+  <link rel="stylesheet" href="./css/menu.css">
+  <link rel="stylesheet" href="./css/button.css">
+  <link rel="stylesheet" href="./css/title.css">
+  <link rel="stylesheet" href="./css/backAndPull.css">
+  <link rel="stylesheet" href="./css/tiangong.css">
+  <link rel="stylesheet" href="./css/cards.css">
+  <style>
+    div {
+      font-family: '楷体';
+
+    }
+
+    .backTop {
+      /* 固定定位 */
+      position: fixed;
+      bottom: 250px;
+      right: 0;
+      margin-right: 20px;
+      z-index: 99999;
+      /* 回到顶部样式 */
+      width: 35px;
+      height: 35px;
+      background-color: rgb(248, 248, 10);
+
+      /* 字体在元素中水平垂直居中 */
+      line-height: 35px;
+      text-align: center;
+      font-size: 14px;
+      color: rgb(248, 4, 4);
+      /* 设置圆角 */
+      border-radius: 50%;
+      /* 设置过渡效果 */
+      transition: all linear 0.5s;
+      cursor: pointer;
+      /* 隐藏 透明度为0 */
+      opacity: 0;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="backTop" id="backTop">Top</div>
+  <main class="container">
+
+    <div>
+      <section class="slide sticky" id="slide1">
+        <div class="video-box">
+          <video class="video-background" preload="auto" loop playsinline autoplay src="./images/vedio02.mp4"
+            tabindex="-1" muted="muted"></video>
+        </div>
+        <div class="menu">
+          <ul class="menu-hover-fill flex flex-col items-start leading-none text-2xl uppercase space-y-4">
+            <li><a href="../index&footer/index.html" data-text="返回"
+                style=" color: #6d1111;font-size: 40px;font-weight: bold;">返回</a></li>
+            <li><a href="#slide2" data-text="人物简介" style=" color: #6d1111;font-size: 42px;font-weight: bold;">人物简介</a>
+            </li>
+            <li><a href="#slide3" data-text="人物墙" style=" color: #6d1111;font-size: 42px;font-weight: bold;">人物墙</a>
+            </li>
+          </ul>
+        </div>
+        <div class="title">
+          <span class="text1">致敬 <span style="color:red">最可爱的人</span></span>
+          <span class="text2"><strong>抗美援朝·74周年</strong></span>
+        </div>
+        <div class="wrap">
+          <a href="#slide2">
+            <div class="btn-6 pull" href="#">下一页<span></span></div>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="slide sticky" id="slide2">
+
+        <div class="video-box">
+          <video class="video-background" preload="auto" loop playsinline autoplay src="./images/vedio03.mp4"
+            tabindex="-1" muted="muted"></video>
+        </div>
+
+        <div class="title03">
+          <p>抗美援朝战争中，中国人民志愿军荣立三等功以上指战员302724名</p>
+          <p>被授予英雄、模范称号和特等功人员502名
+            <span style="color: rgb(216, 231, 97);">(长按下列图片了解抗美援朝英雄)</span>
+          </p>
+
+        </div>
+        <div class="msg msg1">
+          <p>彭德怀（1898年10月24日-1974年11月29日），男，原名得华，号石穿，出生于湖南省湘潭县彭家围子。中华人民共和国开国元帅，伟大的无产阶级革命家，军事家，政治家，中国人民解放军创建人和领导人之一
+          </p>
+          <p>
+            抗美援朝战争中，与麦克阿瑟和李奇微对决，迫使联合国军撤退至北纬38度线以南。被授予“朝鲜民主主义人民共和国英雄”称号
+          </p>
+
+        </div>
+
+        <div class="msg msg2">
+          <p>黄继光（1931年1月8日～1952年10月20日 ），原名黄积广 ，四川省中江县人，中国人民志愿军第15军45师135团2营通讯员
+          </p>
+          <p>
+            特级战斗英雄，第15军第135团2营6连通讯员。在上甘岭战役中，进攻部队受到机枪火力压制，他身体多处受伤，突然迎着敌枪口，挺起胸膛，张开双臂，扑了上去，堵住敌机枪口，用生命为部队开辟了胜利前进的道路。
+          </p>
+        </div>
+        <div class="msg msg3">
+          <p>解秀梅（1932年一1996年1月30日），女，河北省高阳县于堤村人。
+          </p>
+          <p>
+            唯一荣立一等功的女战士，第68军202师政治部文工队队员。1951年11月30日下午，敌机袭击志愿军手术所。解秀梅冲进大火燃烧的屋子，把伤员背出。敌机追着她俯冲轰炸，炸弹落下来，她放下伤员，紧紧地抱住，用自己的身体掩护伤员。炸弹爆炸，飞起的碎石和土块把他们埋起来，解秀梅顾不得伤痛，爬起来，又背上伤员向前跑，背到了防空洞。
+          </p>
+
+        </div>
+
+        <div class="scene">
+          <div class="card hero1">
+            <div class="card__face card__face--front">
+              <img src="./images/pengdehuai2.jfif" />
+            </div>
+            <div class="card__face card__face--back">
+              <img src="./images/pengdehuai1.jpg" />
+            </div>
+          </div>
+
+          <div class="card hero2">
+            <div class="card__face card__face--front">
+              <img src="./images/huangjiguang1.jpg" />
+            </div>
+            <div class="card__face card__face--back">
+              <img src="./images/huangjiguang2.png" />
+            </div>
+          </div>
+
+          <div class="card hero3">
+            <div class="card__face card__face--front">
+              <img src="./images/mei1.png" />
+            </div>
+            <div class="card__face card__face--back">
+              <img src="./images/mei2.png" />
+            </div>
+          </div>
+        </div>
+
+    </div>
+    </section>
+    <!-- <section class="slide sticky" id="slide4">
+                <h1 class=>End</h1>
+            </section> -->
+    </div>
+
+    <section class="slide sticky" id="slide3" style="background-image: url(images/backgroudn2..png);">
+
+
+
+      <div class="title03">
+        <p style="margin-top: 5px;">抗美援朝的英雄众多，如黄继光、邱少云等，他们的英勇无畏令人敬仰。<br>但不止这些，还有无数英烈值得铭记与赞美！
+
+        </p>
+
+      </div>
+
+
+
+    </section>
+    <!-- <section class="slide sticky" id="slide3">
+                    <h1 class=>End</h1>
+                </section> -->
+    </div>
+
+  </main>
+
+
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/111.js"></script>
+  <script src="./js/button.js"></script>
+  <script src="./js/tiangong.js"></script>
+  <script src="./js/cards.js"></script>
+  <script src="./js/backAndPull.js"></script>
+
+
+
+</body>
+
+</html>

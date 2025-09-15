@@ -1,0 +1,77 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="./menu.css">
+    <title>抗美援朝纪念网页</title> 
+    <style>  
+        body, html {  
+            height: 100%;  
+            margin: 0;  
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;  
+        }  
+        .background {  
+            background-image: url('image/抗美援朝.png');  
+            height: 100%;  
+            background-position: center;  
+            background-repeat: no-repeat;  
+            background-size: cover; 
+            z-index: -1;
+        }  
+        .play-button {  
+            position: fixed;  
+            bottom: 20px;  
+            right: 20px;  
+            padding: 10px 20px;  
+            background-color: #7d050f;  
+            color: white;  
+            border: none;  
+            border-radius: 5px;  
+            cursor: pointer;  
+        }
+    </style>  
+</head>  
+<body>
+    <div class="background"></div>  
+    <div class="menu">
+        <ul class="menu-hover-fill">
+          <li><a href="../historical background/historical background.html" data-text="历史背景">历史背景</a></li>
+          <li><a href="../process/process.html" data-text="烽火征程">烽火征程</a></li>
+          <li><a href="../hero figure/page2.html" data-text="英雄人物">英雄人物</a></li>
+          <li><a href="../index&footer/footer.html" data-text="尾页">尾页</a></li>
+        </ul>
+      </div>
+    <audio id="bgmusic" loop>  
+        <source src="中国人民解放军军乐团 - 志愿军战歌.mp3" type="audio/mpeg">  
+        您的浏览器不支持 audio 元素。  
+    </audio>  
+    <button class="play-button" id="playButton">播放/暂停音乐</button>  
+    <script>  
+        var audio = document.getElementById('bgmusic');  
+        var playButton = document.getElementById('playButton');  
+   
+        if (audio.paused) {  
+            playButton.textContent = '播放音乐';  
+        } else {  
+            playButton.textContent = '暂停音乐';  
+        }  
+  
+        // 添加按钮点击事件监听器  
+        playButton.addEventListener('click', function() {  
+            if (audio.paused) {  
+                audio.play();  
+                playButton.textContent = '暂停音乐';  
+            } else {  
+                audio.pause();  
+                playButton.textContent = '播放音乐';  
+            }  
+        });  
+                if (!audio.paused) {  
+                    playButton.textContent = '暂停音乐';  
+                }   
+    </script>  
+    
+</body>  
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>historical_background</title>
+    <link rel="stylesheet" href="./menu.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .history{
+            width: 100%;
+            position: relative;
+            padding: 80px 0;
+            transition: 0.3s ease 0s;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: '楷体', sans-serif;
+        }
+        .history:before{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: rgba(99,99,99,0.8);
+            content:"" ;
+            font-family: '楷体', sans-serif;
+        }
+        .header{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 80px;
+            position:relative;
+            font-family: '楷体', sans-serif;
+        }
+        .title{
+            color: #fff;
+            font-size: 80px;
+            font-weight: normal;
+            margin: 0;
+        }
+        .timeline{
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-width: 700px;
+            position: relative;
+        }
+        .content-title{
+            font-weight: normal;
+            font-size: 60px;
+            margin: -10px 0 0 0;
+            transition: 0.4s;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color:#fff;
+        }
+        .content-description{
+            margin: 0;
+            font-size: 25px;
+            box-sizing: border-box;
+            color: rgba(255,255,255, 0.7);
+            line-height: 25px;
+        }
+        .timeline:before{
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            content:"";
+            background: rgba(255,255,255, 0.07);
+        }
+        .part{
+            padding: 40px 0;
+            opacity: 0.3;
+            filter: blur(2px);
+            transition: 0.5s;
+            box-sizing: border-box;
+            width: calc(50% -40px);
+            display: flex;
+            position: relative;
+            transform: translateY(-80px);
+        }
+        .part:before{
+            content: attr(data-text);
+            letter-spacing: 3px;
+            width: 100%;
+            position: absolute;
+            color: rgba(255,255,255, 0.5);
+            font-size: 13px;
+            border-left: 2px solid rgba(255,255,255, 0.5);
+            top: 70%;
+            margin-top: -5px;
+            padding-left: 15px;
+            opacity: 0;
+            right: calc(-100% -56px);
+            font: 900 20px '';
+            letter-spacing: 5px;
+        }
+        .part:nth-child(even){
+            align-self: flex-end;
+        }
+        .part:nth-child(even):before{
+            right: auto;
+            text-align: right;
+            left: calc(-100% -56px);
+            padding-left: 0;
+            border-left: none;
+            border-right: 2px solid rgba(255,255,255, 0.5);
+            padding-right: 15px;
+        }
+        .part--active{
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0px);
+        }
+        .part--active:before{
+            top: 50%;
+            transition: 0.3s all 0.2s;
+            opacity: 1;
+        }
+        .part--active.content-title{
+            margin: -50px 0 20px ;
+        }
+        .img{
+            max-width: 100%;
+            box-shadow: 0 10px 15px rgba(0,0, 0, 0.4);
+            z-index: -1;
+        }
+        .footer{
+            padding: 95px 0;
+            text-align: center;
+        }
+        .footer a{
+            color: #999;
+            display: inline-block;
+        }
+        .backTop {
+  /* 固定定位 */
+            position: fixed;
+            bottom: 250px;
+            right: 0;
+            margin-right: 20px;
+            z-index: 9999;
+  /* 回到顶部样式 */
+            width: 35px;
+            height: 35px;
+  background-color: rgb(248, 248, 10);
+          
+  /* 字体在元素中水平垂直居中 */
+            line-height: 35px;
+            text-align: center;
+            font-size: 14px;
+            color: rgb(248, 4, 4);
+  /* 设置圆角 */
+            border-radius: 50%;
+  /* 设置过渡效果 */
+            transition: all linear 0.5s;
+            cursor: pointer;
+  /* 隐藏 透明度为0 */
+            opacity: 0;
+            }
+        @media only screen and(max-width:767px){
+            .part{
+                align-self: baseline !important;
+                width: 100%;
+                padding: 0 30px 150px 80px;
+            }
+            .part:before{
+                left: 10px !important;
+                padding: 0 !important;
+                top: 50px;
+                text-align: center !important;
+                width: 60px;
+                border: none !important;
+            }
+            .part:last-child{
+                padding-bottom: 40px;
+            }
+        }
+        @media only screen and (max-width:767px){
+            .timeline:before{
+                left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul class="menu-hover-fill">
+          <li><a href="../index&footer/index.html" data-text="返回">返回</a></li>
+          <li><a href="#oversee" data-text="朝鲜半岛的分裂">朝鲜半岛的分裂</a></li>
+          <li><a href="#time" data-text="朝鲜内战的爆发">朝鲜内战的爆发</a></li>
+          <li><a href="#us" data-text="美国的干涉">美国的干涉</a></li>
+          <li><a href="#china" data-text="对中国的威胁">对中国的威胁</a></li>
+          <li><a href="#su" data-text="苏联的态度">苏联的态度</a></li>
+
+        </ul>
+    </div>
+    <div class="history" id="history">
+        <div class="header">
+            <h2 class="title">历史背景 </h2>
+        </div>
+        <div class="timeline">
+            <div class="part" >
+                <div class="content">
+                    <img class="img" id='oversee'src="./images/1.jpeg">
+                    <h2 class="content-title">朝鲜半岛的分裂</h2>
+                    <p class="content-description">
+                        1948 年 8 月 15 日，在美国支持下，朝鲜半岛南部成立大韩民国；同年 9 月 9 日，朝鲜民主主义人民共和国在北部宣告成立。朝鲜半岛上出现了两个不同性质的政权，形成南北分裂、对立的局面。
+                    </p>
+                </div>
+            </div>
+
+            <div class="part" >
+                <div class="content">
+                    <img  class="img" id='time'src="./images/2.jpg">
+                    <h2 class="content-title">朝鲜内战的爆发</h2>
+                    <p class="content-description">
+                    1950 年 6 月 25 日，朝鲜人民军越过三八线，向韩国军队发起总攻，朝鲜战争爆发。战争初期，朝鲜人民军攻势迅猛，很快占领了韩国大片领土及首都汉城。
+                    </p>
+                </div>
+            </div>
+        
+            <div class="part" >
+                <div class="content">
+                    <img class="img" id='us'src="./images/3.jpeg" >
+                    <h2 class="content-title">美国的干涉</h2>
+                    <p class="content-description">
+                        7月 7 日，美国操纵联合国安理会，成立由美国指挥的“统一司令部”，组建由美国、英国、加拿大等十余国组成的“联合国军”开入朝鲜半岛作战，朝鲜问题成为国际问题。
+                    </p>
+                </div>
+            </div>        
+        
+            <div class="part" >
+                <div class="content">
+                    <img class="img"id='china' src="./images/4.jpg">
+                    <h2 class="content-title">对中国的威胁</h2>
+                    <p class="content-description">
+                        美国不顾中国政府的多次警告，越过三八线，占领平壤，并逐步将战线向朝鲜北部的中朝边境推进，战火蔓延至鸭绿江畔。同时，美国飞机多次侵入中国领空，轰炸丹东地区，严重威胁中国的安全。
+                    </p>
+                </div>
+            </div>
+        
+            <div class="part">
+                <div class="content">
+                    <img class="img" id='su'src="./images/5.jpg">
+                    <h2 class="content-title">苏联的态度</h2>
+                    <p class="content-description">
+                        苏联在朝鲜战争局势逆转后，认为支援朝鲜作战的志愿部队最好由中国军队组成，并与中国沟通相关事宜。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backTop" id="backTop">Top</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./history.js"></script>
+
+    <script>
+       (function($){
+          $.fn.timeline =function(){
+            var selectors={
+                id:$(this),
+                part:$(this).find(".part"),
+                activeClass:"part--active",
+                img:".img"
+            };
+
+            selectors.part.eq(0).addClass(selectors.activeClass);
+            selectors.id.css(
+                "background-image",
+                "url("+
+                selectors.part.first()
+                .find(selectors.img)
+                .attr("src")+
+                ")"
+            );
+
+            var partLength=selectors.part.length;
+
+            $(window).scroll(function(){
+                var max,min;
+
+                var pos=$(this).scrollTop();
+                selectors.part.each(function(i){
+
+                    min=$(this).offset().top;
+                    max=$(this).height()+$(this).offset().top;
+                    var that=$(this)
+
+                    if(i===partLength-2&&pos>min+$(this).height()/2){
+                        selectors.part.removeClass(selectors.activeClass);
+                        selectors.id.css(
+                            "background-image",
+                            "url("+
+                            selectors.part.last()
+                                .find(selectors.img)
+                                .attr("src")+
+                            ")"
+                        );
+                        selectors.part.last().addClass(selectors.activeClass);
+                    }
+
+                    else if(pos<=max-10&&pos>=min){
+                        selectors.id.css(
+                            "background-image",
+                            "url("+
+                            $(this)
+                            .find(selectors.img)
+                            .attr("src")+
+                            ")"
+                        );
+                        selectors.part.removeClass(selectors.activeClass);
+                        $(this).addClass(selectors.activeClass);
+                    }
+                });
+            });
+        };
+    })(jQuery)
+    $("#history").timeline();
+
+    </script>
+</body>
+</html>
